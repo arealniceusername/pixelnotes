@@ -1,0 +1,170 @@
+:root {
+    --pixel-size: 4px;
+    --grid-color: rgba(0, 0, 0, 0.1);
+    --bg-color: #f0f0f0;
+    --primary-color: #333;
+    --border-size: 4px;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    image-rendering: pixelated;
+  }
+  
+  body {
+    font-family: 'Press Start 2P', cursive;
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+    line-height: 1.6;
+    background-image: linear-gradient(var(--grid-color) 1px, transparent 1px),
+                      linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+    background-size: 20px 20px;
+    padding: 20px;
+  }
+  
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .pixel-text {
+    font-size: 36px;
+    text-transform: uppercase;
+    text-shadow: 
+      var(--pixel-size) var(--pixel-size) 0 rgba(0,0,0,0.2),
+      calc(var(--pixel-size) * -1) calc(var(--pixel-size) * -1) 0 rgba(255,255,255,0.3);
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+  }
+  
+  .note-form {
+    background-color: white;
+    padding: 20px;
+    border: var(--border-size) solid black;
+    margin-bottom: 30px;
+    box-shadow: var(--pixel-size) var(--pixel-size) 0 black;
+  }
+  
+  textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    border: var(--border-size) solid black;
+    resize: none;
+    margin-bottom: 15px;
+  }
+  
+  .form-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .color-picker {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .color-option {
+    width: 25px;
+    height: 25px;
+    border: 2px solid black;
+    cursor: pointer;
+    transition: transform 0.1s;
+  }
+  
+  .color-option:hover, .color-option.selected {
+    transform: scale(1.2);
+  }
+  
+  .pixel-button {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 12px;
+    cursor: pointer;
+    border: var(--border-size) solid black;
+    box-shadow: var(--pixel-size) var(--pixel-size) 0 black;
+    transition: all 0.1s;
+  }
+  
+  .pixel-button:hover {
+    transform: translate(2px, 2px);
+    box-shadow: calc(var(--pixel-size) - 2px) calc(var(--pixel-size) - 2px) 0 black;
+  }
+  
+  .pixel-button:active {
+    transform: translate(var(--pixel-size), var(--pixel-size));
+    box-shadow: none;
+  }
+  
+  .notes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+  }
+  
+  .note {
+    padding: 15px;
+    border: var(--border-size) solid black;
+    position: relative;
+    box-shadow: var(--pixel-size) var(--pixel-size) 0 black;
+    word-wrap: break-word;
+    font-size: 12px;
+    min-height: 150px;
+  }
+  
+  .note-content {
+    margin-bottom: 10px;
+    white-space: pre-wrap;
+  }
+  
+  .note-date {
+    font-size: 8px;
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+  }
+  
+  .delete-note {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .delete-note:hover {
+    color: black;
+  }
+  
+  @media (max-width: 768px) {
+    .notes-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .form-controls {
+      flex-direction: column;
+      gap: 15px;
+    }
+    
+    .color-picker {
+      margin-bottom: 10px;
+    }
+  }

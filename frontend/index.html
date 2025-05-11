@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pixel Notes</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1 class="pixel-text">Pixel Notes</h1>
+    </header>
+    
+    <div class="note-form">
+      <textarea id="note-content" placeholder="Write your note here..."></textarea>
+      <div class="form-controls">
+        <div class="color-picker">
+          <span class="color-option" data-color="#FFD700" style="background-color: #FFD700;"></span>
+          <span class="color-option" data-color="#FF6B6B" style="background-color: #FF6B6B;"></span>
+          <span class="color-option" data-color="#4ECDC4" style="background-color: #4ECDC4;"></span>
+          <span class="color-option" data-color="#A06CD5" style="background-color: #A06CD5;"></span>
+        </div>
+        <button id="add-note" class="pixel-button">Add Note</button>
+      </div>
+    </div>
+
+    <div id="notes-container" class="notes-grid">
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
